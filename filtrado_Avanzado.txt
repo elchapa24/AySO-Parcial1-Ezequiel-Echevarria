@@ -1,0 +1,12 @@
+mi usuario es: vagrant
+esta es mi ip: 190.244.11.87
+el hash de mi usuario es: $y$j9T$f7V.J8o8/5JXqaI3xUKKQ0$oND2iaEkOI22AcHc9kfKwylXqBi.VixFO/cPGuxMD..
+
+#ip publica:
+curl ifconfig.me |awk -F ':' '{print ""esta es mi ip: $1}'
+
+#informacion del usuario:
+sudo cat /etc/passwd | grep vagrant | awk -F ':' '{print "mi usuario es: "$1}'
+
+#el hash del usuario:
+sudo cat /etc/shadow | grep vagrant | awk -F ':' '{print "el hash de mi usuario es: "$2}' >> filtrado_Avanzado.txt
